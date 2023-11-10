@@ -1,4 +1,49 @@
+# Instaliacija 
+```
+- Instaliuokite "make", jei naudojate MAC ar Linux susiraskite tutorial, jei naudojate Windows galite naudoti šitą nuorodą :
+https://earthly.dev/blog/makefiles-on-windows/
+
+- Parsisiųskite ir "išextractinkite" šitą github release
+
+- Aplanke kur yra "extractinti" failai atsidarykite cmd
+
+- cmd suveskite "make" komandą (be kabučių)
+
+- Jūsų aplanke bus sugeneruotas failas "main", kuris jau yra tinkamas naudoti
+
+```
+# Naudojimosi instrukcija 
+```
+- Pirmos programos paleidimo metu rekomenduojama pasirinkti generuoti studentų failą, kad būtų galima sužinoti, kur bus saugomi
+sukurti failai (ten bus ir nuskaitomi failai).
+
+- Galima rinktis iš 5 pasirinkimu R- studentų įrašymas ranka, F - nuskaitymas iš failo, G- studentų failo generavimas, T - konteinerių testavimas,
+S - rūšiavimo strategijų testavimas.(KAD VEIKTŲ T IR S REIKIA SUGENERUOTI 1k,10k,100k,1mil,10mil STUDENTŲ FAILUS).
+
+- Įvedimo metu gali reikti įvesti: studentų skaičių, namų darbų kiekį, norėsite skaičiuoti mediana ar vidurkį, kokią strategiją norėsite naudoti
+rūšiuoti vargšus ir kietus, kokį failą norėsite nuskaityti... Tai reiškia jūsų programa prašys ką reikia įvesti.
+
+```
 # Uzduotis-nr-1
+## v1.0 
+### nauji dalykai
+* Galima rūšiuoti pagal vardą, pavardę ir galutinį balą.
+* Galima pasirinkti 3 studentų rūšiavimo į vargšus ir kietus studentus. 
+* Galima testuoti failus pagal rūšiavimo strategiją.
+* Galima įdiegti failą naudojant Makefile.
+
+### Strategiju testavimo rezultatai sekundėmis
+* Apdorota Excel lentelė
+
+
+![Screenshot_2](https://github.com/laurinykas/Uzduotis-nr-1/assets/112711939/c1684dd1-0538-4a1d-83ae-7ef2aeb150de)
+* Raw kodo išvedimas
+![Screenshot_1](https://github.com/laurinykas/Uzduotis-nr-1/assets/112711939/5d3602ba-938d-4483-98ca-e528e362dc54)
+* Konteinerių vidurkiai atskiriant strategijas
+
+![image](https://github.com/laurinykas/Uzduotis-nr-1/assets/112711939/e34e6e45-8d56-4801-934b-e19126dbf0c5)
+
+
 ## v0.3 
 ### nauji dalykai
 * Implementuotas std::list konteineris.
