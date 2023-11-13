@@ -507,6 +507,65 @@ void Koks_failo_pav (){
 
         }
     }
+void Sortingas ( int sortingo_tipas){
+
+    
+        if(sortingo_tipas == 1){// pagal varda
+            sort(stud.begin(), stud.end(), palyginimas_vardas);
+        }
+        else if (sortingo_tipas == 2){// pagal pavarde
+            sort(stud.begin(), stud.end(), palyginimas_pavarde);
+        }
+        else {// pagal galutini
+            sort(stud.begin(), stud.end(), palyginimas_galutinis);
+        }
+
+    }
+bool palyginimas_vardas( Duomenys a, Duomenys b){
+    if (a.vardas == b.vardas){
+
+        return a.pavarde < b.pavarde;}
+
+    return a.vardas < b.vardas;
+}
+bool palyginimas_pavarde( Duomenys a, Duomenys b){
+    if (a.pavarde == b.pavarde){
+
+        return a.vardas < b.vardas;}
+
+    return a.pavarde < b.pavarde;
+}
+bool palyginimas_galutinis( Duomenys a, Duomenys b){
+    if (a.galutinis == b.galutinis){
+
+        return a.vardas < b.vardas;}
+
+    return a.galutinis < b.galutinis;
+}
+int Rusiavimo_tipas() {
+    int pasirinkimas;
+    cout << "Kaip noresite rusiuoti 1 - pagal varda, 2 - pagal pavarde, 3- pagal galutini bala ? :" << endl;
+    cin >> pasirinkimas;
+    do{
+        if(pasirinkimas &&( pasirinkimas == 1 || pasirinkimas == 2 || pasirinkimas == 3)){
+            return pasirinkimas;
+
+
+        }
+        else{
+            cout << "Iveskite nenulini skaiciu, nuo 1 iki 3!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cin >> pasirinkimas;
+
+
+        }
+    }while (pasirinkimas != 1 and pasirinkimas != 2 and pasirinkimas != 3);
+
+
+}   
+    
+
 void Fake_main(){
 
     char ranka_failas;
