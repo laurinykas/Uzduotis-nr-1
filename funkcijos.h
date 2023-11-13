@@ -15,13 +15,17 @@ void ivedimas (int studentu_kiekis);
 void studentu_generavimas(int st_k, int  namu_d);
 void Studentu_skaldymas ();
 void readfromFile( string filename, vector<Duomenys> &stud);
-bool palyginimas(Duomenys a, Duomenys b);
 void Kategorija(int studentu_k);
 void Failu_kurimas (vector<Duomenys> vektorius, string failo_vardas, int pasirinkimas);
 int Konsole_ar_failas ();
 int Isvesties_pasirinkimas ();
 void Koks_failo_pav ();
 void Fake_main();
+int Rusiavimo_tipas() ;
+void Sortingas (int sortingo_tipas);
+bool palyginimas_vardas(Duomenys a, Duomenys b);
+bool palyginimas_pavarde( Duomenys a, Duomenys b);
+bool palyginimas_galutinis( Duomenys a, Duomenys b);
 
 extern vector <Duomenys> stud;
 extern vector<Duomenys> kieti;
