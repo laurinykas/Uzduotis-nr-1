@@ -275,13 +275,6 @@ void readfromFile( string filename, vector<Duomenys> &stud){
             }
 
 }
-bool palyginimas( Duomenys a, Duomenys b){
-    if (a.vardas == b.vardas){
-
-        return a.pavarde < b.pavarde;}
-
-    return a.vardas < b.vardas;
-}
 
 
 void studentu_generavimas(int studentu_kiekis, int  namu_d){
@@ -580,15 +573,17 @@ void Fake_main(){
                     ivedimas(eiles_nr);
 
                 }
-                sort(stud.begin(),stud.end(), palyginimas);
+                //sort(stud.begin(),stud.end(), palyginimas);
                 char kieti_vargsai;
+                int rusiavimo_tipas = Rusiavimo_tipas();
                 cout<< "Ar norite isrusiuoti studentus studentus i vargsus ir kietus ?(T/N)"<<endl; cin>> kieti_vargsai;
                 do{
                     if (kieti_vargsai && (kieti_vargsai == 'T' || kieti_vargsai == 't' || kieti_vargsai == 'N' || kieti_vargsai == 'n')){
                         if (kieti_vargsai == 'T'||kieti_vargsai == 't'){
                             Kategorija(studentu_kiekis);
+                            Sortingas(rusiavimo_tipas);
                             Studentu_skaldymas();
-                            //sortinti reiktu pagal vidurki
+                    
                             int konsole_ar_failas = Konsole_ar_failas ();
                             if(konsole_ar_failas == 1){
                                 // matavimas
@@ -608,7 +603,7 @@ void Fake_main(){
                         else{
                             int konsole_ar_failas = Konsole_ar_failas();
                             int isvedimas = Isvesties_pasirinkimas();
-                            sort(stud.begin(),stud.end(), palyginimas);
+                            Sortingas(rusiavimo_tipas);
                             if (konsole_ar_failas == 1){
 
                                 cout<< "Isvesti visi studentai :"<<endl;
@@ -646,19 +641,19 @@ void Fake_main(){
                 std::chrono::duration<double> laikas;
                 int kons_ar_failas = Konsole_ar_failas();
                 int isvedimas = Isvesties_pasirinkimas();
+                int rusiavimo_tipas = Rusiavimo_tipas();
                 //
                 Koks_failo_pav ();// laikas suskaiciuotas
                 studentu_kiekis = stud.size() -1 ;
                 auto start = hrClock::now();
                 stud.erase(stud.begin());
-                sort(stud.begin(),stud.end(), palyginimas);
-                auto end = hrClock::now(); laikas = end - start ;
-                cout << studentu_kiekis <<" studentu failo surusiavimas pagal varda uztruko : " << laikas.count() << " s"<< endl;
-                Kategorija(studentu_kiekis);
+                //sort(stud.begin(),stud.end(), palyginimas);
+                Kategorija(studentu_kiekis);Sortingas(rusiavimo_tipas);auto end = hrClock::now(); laikas = end - start ;
+                cout << studentu_kiekis <<" studentu failo surusiavimas  uztruko : " << laikas.count() << " s"<< endl;
                 start = hrClock::now();
                 Studentu_skaldymas();
                 end = hrClock::now(); laikas= end - start;
-                cout << studentu_kiekis <<" studentu failo surusiavimas i atskirus vektorius uztriko : " << laikas.count() << " s"<< endl;
+                cout << studentu_kiekis <<" studentu failo surusiavimas i atskirus vektorius uztruko : " << laikas.count() << " s"<< endl;
 
                 if(kons_ar_failas == 1){
                     start = hrClock ::now();
